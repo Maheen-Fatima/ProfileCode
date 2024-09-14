@@ -1,59 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">  <!-- for lang english-->
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- for special char-->
-    <title>My Profile</title> <!-- namee for title bar on chrome-->
-    <style>  /* css style*/
-         
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <style>
         body {
             background-image: url('images/background.jpg');
             background-size: cover;
-            font-family: Georgia;
+            font-family: Georgia, serif;
             margin: 0;
             padding: 0;
         }
 
         /* Styling of navigation bar */
         nav {
-            
             background-color: #333;
             overflow: hidden;
         }
 
-        /* Navigation links(buttons) (inside the nav bar) */
-  
-        nav a {                      /*stylingg of the buttoon home, about me etc  */ 
-            float: left;   /* print the buttons horizontally*/
-            color: white;  /* color of text*/
+        /* Navigation links (buttons) (inside the nav bar) */
+        nav a {
+            float: left;
+            color: white;
             text-align: center;
-            padding: 15px 15px; /* for handling the space between the buttons"*/
+            padding: 15px 15px;
             text-decoration: underline;
-           
         }
 
         /* Change color on hover */
         nav a:hover {
             background-color: #ddd;
             color: black;
-            
         }
 
-    
+        /* Profile Section Styling */
+        .profile-section {
+            position: fixed; /* Fixes the section to the right side */
+            top: 48px; /* Aligns the section at the top of the page */
+            /* Aligns the section to the right side */
+            right: 3px;; /*im leaving some space to the right side to adjust the format"
+            height: 87vh; /* Full height of the viewport */
+            width: 250px; /* Adjust width as needed */
+            background-color: rgba(255, 255, 255, 0.8); /*  background */
+            padding: 15px; /* Padding inside the section */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            text-align: center; /* Center-align text */
+            border: 2px solid black; /* Black border with 2px thickness */
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
+
+        .profile-pic {
+            width: 110px; /* Width of the profile picture */
+            height: 110px; /* Height of the profile picture */
+            border-radius: 50%; /* Makes the picture round */
+            object-fit: cover; /* Ensures the image covers the area */
+            margin-bottom: 10px; /* Space between the picture and the name */
+        }
+
+        .profile-name {
+            font-family: 'Lato', sans-serif; 
+            font-size: 24px; /*  font size */
+            font-weight: 700; /* Bold font weight */
+            color: #000000; /* Text color */
+            margin: 0; /* Remove default margin */
+        }
+
+        .contact-info, .education-list {
+            text-align: left; /* Align text to the left */
+            margin-top: 15px; /* Add space above the section */
+        }
+
+        .contact-info p, .education-list li {
+            margin: 5px 0; /* Add space between items */
+        }
+
+        .education-list {
+            list-style: none; /* Remove bullet points */
+            padding: 0; /* Remove padding */
+        }
+
+        .education-list li {
+            border-bottom: 1px solid #ddd; /* Add separator line */
+            padding-bottom: 10px; /* Add space below each item */
+            margin-bottom: 10px; /* Add space between items */
+        }
+
+        .date {
+            display: block; /* Display date on a new line */
+            font-size: 0.9em; /* Smaller font size for date */
+            color: #555; /* Lighter color for date */
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar (a is an anchor tag ) (href (Hypertext Reference)is
-      the attribut of a to tell where the link will take us  )-->
-     
+    <!-- Navigation Bar -->
     <nav>
-        <a href="home.html">Home</a> <!-- id is home , # means look for an id --> 
-        <a href="about.html">About Me</a>
+        <a href="home.html">Home</a>
         <a href="skills.html">Skills</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contacts</a>
-       
     </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+        <p class="profile-name">Maheen Fatima</p>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> 03234666447</p>
+            <p><strong>Email:</strong> bscs22093@itu.edu.pk</p>
+        </div>
+        <div class="education-list">
+            <h3>Education</h3>
+            <ul>
+                <li><!--br is line breaker-->
+                    <strong>Bachelor's:</strong> BS Computer Science, Information Technology University
+                    <br><span class="date">Aug 2022 - Aug 2026</span>
+                </li>
+                <li>
+                    <strong>Intermediate:</strong> Intermediate in Computer Science, Kinnaird College for Women
+                    <br><span class="date">Sept 2020 - Sept 2022</span>
+                </li>
+                <li>
+                    <strong>School:</strong> Lahore Grammar School
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 </html>
