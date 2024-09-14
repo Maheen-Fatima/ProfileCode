@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Projects and Courses</title>
+    <style>
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 0;
+            color: #3b3b3b;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a3b2c;
+            margin: 20px 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5; /* Light nude background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .section {
+            padding: 20px;
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #6a4c41; /* Darker nude color for headers */
+            font-size: 1.8em;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #e8dcd8; /* Light nude color */
+            border-left: 5px solid #a88f77; /* Slightly darker nude border */
+            border-right: 5px solid #a88f77;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #d4bfb8; /* Slightly darker on hover */
+        }
+
+        .date {
+            font-weight: bold;
+            color: #7c5c4f; /* Darker text color for dates */
+        }
+
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .course-item {
+            background-color: #f4e8e1; /* Soft nude color */
+            border: 1px solid #e0d3cb;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-item:hover {
+            background-color: #e0d3cb; /* Slightly darker on hover */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Projects and Courses</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Projects</h2>
+            <ul id="projectList">
+                <li>
+                    <span class="date">Jan 2023:</span> Snake Game
+                </li>
+                <li>
+                    <span class="date">Dec 2022:</span> Japanese Chess
+                </li>
+                <li>
+                    <span class="date">Nov 2022:</span> Gomoku
+                </li>
+                <li>
+                    <span class="date">March 2023:</span> Scientific Calculator
+                </li>
+                <li>
+                    <span class="date">March 2023:</span> Chess Game
+                </li>
+                <li>
+                    <span class="date">April 2023:</span> Ludo
+                </li>
+                <li>
+                    <span class="date">May 2023:</span> Paint Brush
+                </li>
+                <li>
+                    <span class="date">Sept 2023:</span> Solitaire
+                </li>
+                <li>
+                    <span class="date">Oct 2023:</span> Mini Excel
+                </li>
+                <li>
+                    <span class="date">Nov 2023:</span> DOS and Text Editor
+                </li>
+                <li>
+                    <span class="date">Dec 2023:</span> Search Engine
+                </li>
+                <li>
+                    <span class="date">Jan 2024:</span> Darkness Detector with Arduino
+                </li>
+                <li>
+                    <span class="date">May 2024:</span> Hotel Management System
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Courses</h2>
+            <div class="courses-container">
+                <div class="course-item">Computing Fundamental and Programming (CFP)</div>
+                <div class="course-item">Information Communication Technology (ICT)</div>
+                <div class="course-item">Object Oriented Programming (OOP)</div>
+                <div class="course-item">Data Structures & Algorithms (DSA)</div>
+                <div class="course-item">Design & Analysis of Algorithms</div>
+                <div class="course-item">Financial Law</div>
+                <div class="course-item">Computer Architecture and Assembly language</div>
+                <div class="course-item">Discrete Structure</div>
+                <div class="course-item">Game Theory</div>
+                <div class="course-item">Digital Logic Design (DLD)</div>
+                <div class="course-item">Database System</div>
+                <div class="course-item">Basic Electronics</div>
+                <div class="course-item">Communication Skills</div>
+                <div class="course-item">Quran Translation</div>
+                <div class="course-item">Java language</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*Waits until the HTML document is fully loaded*/
+        document.addEventListener('DOMContentLoaded', function() {
+            /*Finds all list items (<li>) inside an element with the
+                 ID projectList and saves them in a variable called projects.*/
+            let projects = document.querySelectorAll('#projectList li');
+            projects.forEach(project => {
+                console.log('Project loaded:', project.textContent.trim());
+            });
+        });
+    </script>
+
+</body>
+</html>

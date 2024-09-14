@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             background-image: url('images/background.jpg');
@@ -10,32 +12,51 @@
             font-family: Georgia, serif;
             margin: 0;
             padding: 0;
+            color: #3b3b3b;
         }
 
-        /* Styling of navigation bar */
+        /* Navigation Bar */
         nav {
-            background-color: #333;
-            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 230px;
+            background-color: rgba(51, 51, 51, 0.8);
+            overflow: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Navigation links (buttons) (inside the nav bar) */
         nav a {
-            float: left;
-            font-size:20px ;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
             color: white;
             text-align: center;
-            padding: 20px 20px;
-            text-decoration: underline;
+            padding: 20px;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            width: 100%;
+            box-sizing: border-box;
         }
 
-        /* Change color on hover */
+        .nav-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
         nav a:hover {
             background-color: #ddd;
             color: black;
         }
 
-        /* Motto Styling */
         .motto {
+            margin-left: 220px;
             text-align: center;
             margin: 20px 0;
             font-size: 20px;
@@ -43,91 +64,171 @@
             color: #333;
         }
 
-        .motto-urdu {
-            
+        .motto-urdu, .motto-arabic {
             font-size: 30px;
         }
 
-        .motto-arabic {
-            font-size: 30px;
-        }
-
-        /* Profile Section Styling */
         .profile-section {
-            position: fixed; /* Fixes the section to the right side */
-            top: 62px; /* Aligns the section at the top of the page */
-            /* Aligns the section to the right side */
-            right: 3px; /* Leaving some space to the right side to adjust the format */
-            height: 85vh; /* Full height of the viewport */
-            width: 250px; /* Adjust width as needed */
-            background-color: rgba(255, 255, 255, 0.8); /* Background */
-            padding: 15px; /* Padding inside the section */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
-            text-align: center; /* Center-align text */
-            border: 2px solid black; /* Black border with 2px thickness */
-            overflow-y: auto; /* Allows scrolling if content overflows */
+            margin-left: 220px;
+            position: fixed;
+            top: 15px;
+            right: 5px;
+            height: 90vh;
+            width: 250px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 2px solid black;
+            overflow-y: auto;
         }
 
         .profile-pic {
-            width: 110px; /* Width of the profile picture */
-            height: 110px; /* Height of the profile picture */
-            border-radius: 50%; /* Makes the picture round */
-            object-fit: cover; /* Ensures the image covers the area */
-            margin-bottom: 10px; /* Space between the picture and the name */
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
         }
 
         .profile-name {
             font-family: 'Lato', sans-serif;
-            font-size: 24px; /* Font size */
-            font-weight: 700; /* Bold font weight */
-            color: #000000; /* Text color */
-            margin: 0; /* Remove default margin */
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+            margin: 0;
         }
 
         .contact-info, .education-list {
-            text-align: left; /* Align text to the left */
-            margin-top: 15px; /* Add space above the section */
+            text-align: left;
+            margin-top: 15px;
         }
 
         .contact-info p, .education-list li {
-            margin: 5px 0; /* Add space between items */
+            margin: 5px 0;
         }
 
         .education-list {
-            list-style: none; /* Remove bullet points */
-            padding: 0; /* Remove padding */
+            list-style: none;
+            padding: 0;
         }
-        .icon {
-         font-size: 20px;
-         margin-right: 8px;
-         vertical-align: middle;
-         color: black; /* Set icon color to black */
-        }
+
         .education-list li {
-            border-bottom: 1px solid #ddd; /* Add separator line */
-            padding-bottom: 10px; /* Add space below each item */
-            margin-bottom: 10px; /* Add space between items */
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .date {
-            display: block; /* Display date on a new line */
-            font-size: 0.9em; /* Smaller font size for date */
-            color: #555; /* Lighter color for date */
+            display: block;
+            font-size: 0.9em;
+            color: #555;
         }
+
+        /* Section Styling */
+        .section{
+            margin: 60px 0;
+            margin-left: 280px;
+            max-width: 700px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: none;
+        }
+        .section1{
+            margin: 50px 0;
+            margin-left: 330px;
+            max-width: 600px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: none;
+        }
+        .section2{
+            margin: 130px 0;
+            margin-left: 350px;
+            max-width: 600px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: none;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #6a4c41;
+        }
+        .section1 h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #6a4c41;
+        }
+        .section2 h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #6a4c41;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #e8dcd8;
+            border-left: 5px solid #a88f77;
+            border-right: 5px solid #a88f77;
+            border-radius: 5px;
+        }
+
+        li:hover {
+            background-color: #d4bfb8;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #4a3b2c;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="home.html">Home</a>
-        <a href="skills.html">Skills</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contacts</a>
+        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a>
+        <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
+        <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
+        <a id="toggle-section"><i class="fas fa-award nav-icon"></i>Certificates&Awards</a>
+        <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i>Projects&Courses</a>
     </nav>
 
-    <!-- Motto . rtl setss the text direction to right-to-left-->
+    <!-- Motto -->
     <div class="motto">
         <div class="motto-urdu" dir="rtl">
             انسان کے لئے وہی کچھ ہے جس کے لئے وہ کوشش کرے
@@ -141,7 +242,7 @@
     <div class="profile-section">
         <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
         <p class="profile-name">Maheen Fatima</p>
-        <div class="contact-info">  <!--.icon class in the css-->
+        <div class="contact-info">
             <p><span class="icon">📞</span>03234666447</p>
             <p><span class="icon">📧</span>bscs22093@itu.edu.pk</p>
         </div>
@@ -163,5 +264,65 @@
         </div>
     </div>
 
+    <!-- Certificates, Achievements, and Courses Section -->
+    <!-- Certificates, Achievements, and Courses Section -->
+<div id="certificates-achievements-courses" class="section">
+    <h2>Certificates & Achievements</h2>
+    <ul>
+        <li>Participation in IKLC</li>
+        <li>MUN participation at school level</li>
+        <li>Kinnaird festival of Statistics and Data Science</li>
+        <li>Kinnaird Festival of Statistics and Data Science Poster Competition - 1st position</li>
+        <li>Scored 2nd Position in IKLC at school level</li>
+    </ul>
+</div>
+
+
+    <!-- Skills Section -->
+    <div id="skills" class="section1">
+        <h2>My Skills</h2>
+        <ul>
+            <li>C++</li>
+            <li>C#</li>
+            <li>Java</li>
+            <li>Web Development</li>
+            <li>Communication skills</li>
+            <li>Microsoft Office</li>
+            <li>Team work</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section2">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> 03234666447</p>
+            <p><strong>Email 1:</strong> <a href="mailto:bscs22093@itu.edu.pk">bscs22093@itu.edu.pk</a></p>
+            <p><strong>Email 2:</strong> <a href="mailto:maheenawais.15@gmail.com">maheenawais.15@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/Maheen-Fatima" target="_blank">https://github.com/Maheen-Fatima</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/maheen-fatima-485739263/" target="_blank">https://www.linkedin.com/in/maheen-fatima-485739263/</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle sections -->
+    <script>
+        document.getElementById('toggle-skills').addEventListener('click', function() {
+            document.getElementById('skills').style.display = 'block';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('certificates-achievements-courses').style.display = 'none';
+        });
+
+        document.getElementById('toggle-contact').addEventListener('click', function() {
+            document.getElementById('skills').style.display = 'none';
+            document.getElementById('contact').style.display = 'block';
+            document.getElementById('certificates-achievements-courses').style.display = 'none';
+        });
+
+        document.getElementById('toggle-section').addEventListener('click', function() {
+            document.getElementById('skills').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('certificates-achievements-courses').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
