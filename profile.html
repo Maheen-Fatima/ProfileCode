@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>My Profile</title>
-    <!-- Link to Font Awesome for icons -->
+    <!-- Link to Font for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('images/background.jpg');
-            background-size: cover;
+            background-image: url('images/background.jpg');/*img path*/
+            background-size: cover;/*so that it covers the entire page*/
             font-family: Georgia, serif;
             margin: 0;
             padding: 0;
             color: #3b3b3b;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar styling */
         nav {
             position: fixed;
             top: 0;
@@ -25,8 +25,8 @@
             background-color: rgba(51, 51, 51, 0.8);
             overflow: auto;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            display: flex;
+            z-index: 1000;/*element at top of another ele*/
+            display: flex;/*allowing for flexible layout and alignment of child elements.*/
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -38,7 +38,7 @@
             font-size: 18px;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 20px;/*space btw each text*/
             text-decoration: none;
             border-bottom: 1px solid #444;
             width: 100%;
@@ -134,7 +134,7 @@
             padding: 15px;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba;
             position: relative;
             display: none;
         }
@@ -145,7 +145,7 @@
             padding: 10px;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba;
             position: relative;
             display: none;
         }
@@ -156,7 +156,7 @@
             padding: 15px;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba;
             position: relative;
             display: none;
         }
@@ -220,8 +220,9 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav>
-        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a>
+    <nav> <!--a creates a clickable link. <i> tag used for icons-->
+        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a> <!-- classes fas and fa-home are from Font Awesome
+         and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
         <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
         <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
         <a id="toggle-section"><i class="fas fa-award nav-icon"></i>Certificates&Awards</a>
@@ -229,8 +230,8 @@
     </nav>
 
     <!-- Motto -->
-    <div class="motto">
-        <div class="motto-urdu" dir="rtl">
+    <div class="motto"><!--div element name motto-->
+        <div class="motto-urdu" dir="rtl"><!--rtl is for right to left direction for texts-->
             انسان کے لئے وہی کچھ ہے جس کے لئے وہ کوشش کرے
         </div>
         <div class="motto-arabic" dir="rtl">
@@ -240,7 +241,8 @@
 
     <!-- Profile Section -->
     <div class="profile-section">
-        <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
+        <!--alt..If the image can't be displayed, this text will be shown instead-->
+        <img src="images/profilepic.png" alt="Profile Picture"class="profile-pic">
         <p class="profile-name">Maheen Fatima</p>
         <div class="contact-info">
             <p><span class="icon">📞</span>03234666447</p>
@@ -264,7 +266,7 @@
         </div>
     </div>
 
-    <!-- Certificates, Achievements, and Courses Section -->
+
     <!-- Certificates, Achievements, and Courses Section -->
 <div id="certificates-achievements-courses" class="section">
     <h2>Certificates & Achievements</h2>
@@ -301,11 +303,13 @@
             <p><strong>Email 2:</strong> <a href="mailto:maheenawais.15@gmail.com">maheenawais.15@gmail.com</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/Maheen-Fatima" target="_blank">https://github.com/Maheen-Fatima</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/maheen-fatima-485739263/" target="_blank">https://www.linkedin.com/in/maheen-fatima-485739263/</a></p>
-        </div>
+        </div><!--target.. link should open in a new tab or window-->
     </div>
 
     <!-- JavaScript to toggle sections -->
-    <script>
+    <script> /*Displays the element with the ID skills.Hides the elements with IDs contact and 
+    certificates-achievements-courses by setting their display properties to none.
+    Click toggle-skills: Shows the "skills" section and hides "contact" and "certificates-achievements-courses"*/
         document.getElementById('toggle-skills').addEventListener('click', function() {
             document.getElementById('skills').style.display = 'block';
             document.getElementById('contact').style.display = 'none';
