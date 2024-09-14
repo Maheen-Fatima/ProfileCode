@@ -21,9 +21,10 @@
         /* Navigation links (buttons) (inside the nav bar) */
         nav a {
             float: left;
+            font-size:20px ;
             color: white;
             text-align: center;
-            padding: 15px 15px;
+            padding: 20px 20px;
             text-decoration: underline;
         }
 
@@ -33,15 +34,33 @@
             color: black;
         }
 
+        /* Motto Styling */
+        .motto {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+            color: #333;
+        }
+
+        .motto-urdu {
+            
+            font-size: 30px;
+        }
+
+        .motto-arabic {
+            font-size: 30px;
+        }
+
         /* Profile Section Styling */
         .profile-section {
             position: fixed; /* Fixes the section to the right side */
-            top: 48px; /* Aligns the section at the top of the page */
+            top: 62px; /* Aligns the section at the top of the page */
             /* Aligns the section to the right side */
-            right: 3px;; /*im leaving some space to the right side to adjust the format"
-            height: 87vh; /* Full height of the viewport */
+            right: 3px; /* Leaving some space to the right side to adjust the format */
+            height: 85vh; /* Full height of the viewport */
             width: 250px; /* Adjust width as needed */
-            background-color: rgba(255, 255, 255, 0.8); /*  background */
+            background-color: rgba(255, 255, 255, 0.8); /* Background */
             padding: 15px; /* Padding inside the section */
             border-radius: 15px; /* Rounded corners */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
@@ -59,8 +78,8 @@
         }
 
         .profile-name {
-            font-family: 'Lato', sans-serif; 
-            font-size: 24px; /*  font size */
+            font-family: 'Lato', sans-serif;
+            font-size: 24px; /* Font size */
             font-weight: 700; /* Bold font weight */
             color: #000000; /* Text color */
             margin: 0; /* Remove default margin */
@@ -79,7 +98,12 @@
             list-style: none; /* Remove bullet points */
             padding: 0; /* Remove padding */
         }
-
+        .icon {
+         font-size: 20px;
+         margin-right: 8px;
+         vertical-align: middle;
+         color: black; /* Set icon color to black */
+        }
         .education-list li {
             border-bottom: 1px solid #ddd; /* Add separator line */
             padding-bottom: 10px; /* Add space below each item */
@@ -103,18 +127,28 @@
         <a href="contact.html">Contacts</a>
     </nav>
 
+    <!-- Motto . rtl sets the text direction to right-to-left-->
+    <div class="motto">
+        <div class="motto-urdu" dir="rtl">
+            انسان کے لئے وہی کچھ ہے جس کے لئے وہ کوشش کرے
+        </div>
+        <div class="motto-arabic" dir="rtl">
+            الإنسان فقط يحصل على ما يسعى إليه
+        </div>
+    </div>
+
     <!-- Profile Section -->
     <div class="profile-section">
         <img src="images/profilepic.png" alt="Profile Picture" class="profile-pic">
         <p class="profile-name">Maheen Fatima</p>
-        <div class="contact-info">
-            <p><strong>Phone:</strong> 03234666447</p>
-            <p><strong>Email:</strong> bscs22093@itu.edu.pk</p>
+        <div class="contact-info">  <!--.icon class in the css-->
+            <p><span class="icon">📞</span>03234666447</p>
+            <p><span class="icon">📧</span>bscs22093@itu.edu.pk</p>
         </div>
         <div class="education-list">
             <h3>Education</h3>
             <ul>
-                <li><!--br is line breaker-->
+                <li>
                     <strong>Bachelor's:</strong> BS Computer Science, Information Technology University
                     <br><span class="date">Aug 2022 - Aug 2026</span>
                 </li>
