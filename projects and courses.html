@@ -5,17 +5,17 @@
     <title>My Projects and Courses</title>
     <style>
         body {
-            background-image: url('images/background.jpg');
+            background-image: url('images/bg.jpeg');
             background-size: cover;
             font-family: Georgia, serif;
             margin: 0;
             padding: 0;
-            color: #3b3b3b;
+            color: #e0e0e0; /* Light text color for better readability on dark background */
         }
 
         h1 {
             text-align: center;
-            color: #4a3b2c;
+            color: #ffffff; /* Light purplish-blue color */
             margin: 20px 0;
             font-size: 2.5em;
         }
@@ -24,8 +24,8 @@
             width: 80%;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5; /* Light nude background */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            background-color: #3e3e6b; /* Dark purplish-blue background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -35,14 +35,14 @@
 
         .section {
             padding: 20px;
-            background-color: #ffffff; /* White background for sections */
+            background-color: #2c2c4f; /* Slightly lighter purplish-blue background */
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
         }
 
         h2 {
             margin-top: 0;
-            color: #6a4c41; /* Darker nude color for headers */
+            color: #ffffff; /* Light purplish-blue color for headers */
             font-size: 1.8em;
         }
 
@@ -54,44 +54,40 @@
         li {
             margin: 15px 0;
             padding: 10px;
-            background-color: #e8dcd8; /* Light nude color */
-            border-left: 5px solid #a88f77; /* Slightly darker nude border */
-            border-right: 5px solid #a88f77;
+            background-color: #4a4a8c; /* Medium purplish-blue color */
+            border-left: 5px solid #2e2e5e; /* Darker purplish-blue border */
+            border-right: 5px solid #2e2e5e;
             border-radius: 5px;
+            color: #e0e0e0; /* Light text color */
         }
 
         li:hover {
-            background-color: #d4bfb8; /* Slightly darker on hover */
+            background-color: #6a6a9c; /* Slightly lighter purplish-blue on hover */
         }
 
         .date {
             font-weight: bold;
-            color: #7c5c4f; /* Darker text color for dates */
+            color: #b39ddb; /* Light purplish-blue color for dates */
         }
 
         .courses-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid layout */
             gap: 10px;
         }
 
         .course-item {
-            background-color: #f4e8e1; /* Soft nude color */
-            border: 1px solid #e0d3cb;
+            background-color: #4a4a8c; /* Medium purplish-blue color */
+            border: 1px solid #3e3e6b; /* Darker purplish-blue border */
             border-radius: 5px;
             padding: 10px;
             text-align: center;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            color: #e0e0e0; /* Light text color */
         }
 
         .course-item:hover {
-            background-color: #e0d3cb; /* Slightly darker on hover */
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
+            background-color: #6a6a9c; /* Slightly lighter purplish-blue on hover */
         }
     </style>
 </head>
@@ -168,16 +164,22 @@
     </div>
 
     <script>
-        /*Waits until the HTML document is fully loaded*/
+        // This event listener waits until the entire HTML document is fully loaded and parsed
         document.addEventListener('DOMContentLoaded', function() {
-            /*Finds all list items (<li>) inside an element with the
-                 ID projectList and saves them in a variable called projects.*/
+    
+            // Select all <li> elements inside the <ul> or <ol> element with the id 'projectList'
             let projects = document.querySelectorAll('#projectList li');
+    
+            // Loop through each project (each <li> item)
             projects.forEach(project => {
+    
+                // Log a message to the console displaying the text of each project
+                // 'textContent' gets the text inside the <li> element, and 'trim()' removes any extra spaces
                 console.log('Project loaded:', project.textContent.trim());
             });
         });
     </script>
+    
 
 </body>
 </html>
