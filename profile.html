@@ -7,6 +7,9 @@
     <meta name="keywords" content="Maheen Fatima, profile, education, skills, achievements, contact information, certificates, awards, BS Computer Science">
     <meta name="author" content="Maheen Fatima">
 
+    <!--for mobile first--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>My Profile</title>
     <!-- Link to Font for icons -->
      <!--line rel rel="stylesheet" attribute specifies that the linked file is a CSS -->
@@ -237,7 +240,7 @@
             border-left: 5px solid #15152b; /* Darker purplish-blue border */
             border-right: 5px solid #15152b;
             border-radius: 5px;
-            color: #e0e0e0; /* Light gray text color */
+            color: #e0e0e0; 
         }
 
         li:hover {
@@ -249,12 +252,196 @@
         }
 
         .contact-info a {
-            color: #e0e0e0; /* Light gray text color */
+            color: #e0e0e0; 
             text-decoration: none;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        @media screen and (max-width: 450px) 
+        {
+
+            .video-frame {
+            position: fixed;
+            
+            margin-left: 0px; /* Adjusted margin */
+            top: 420px;
+            left: 0px; /* Move video slightly to the right */
+            right: 100px;
+            width: 90%; /* Set the width of the video frame */
+            height: 25%; /* Set the height of the video frame */
+            padding: 15px; /* Padding inside the frame */
+            border: 5px solid #161616; /* Dark border color of the frame */
+            border-radius: 10px; /* Rounded corners for the frame */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow to give a 3D effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1; /* Sends the video behind all other content */
+        }
+        /* Background Video Styling */
+        .bg-video {
+            width: 100%; /* Fill the width of the frame */
+            height: 100%; /* Fill the height of the frame */
+            object-fit: cover; /* Ensures the video covers the whole area of the frame */
+            border-radius: 5px; /* Rounded corners for the video */
+        }
+            .section ,li
+            {
+                 font-size: 10px;
+            }
+            .contact-list
+            {
+                font-size: 11px;
+            }
+            .section {
+            margin: 80px 0;
+            margin-left: 140px;
+            max-width: 220px;
+            padding: 15px;
+            background-color: #2c2c4c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba;
+            position: relative;
+            display: none;
+        }
+
+        .section1 {
+            margin: 60px 0;
+            margin-left: 150px;
+            max-width: 200px;
+            padding: 10px;
+            background-color:#2c2c4c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba;
+            position: relative;
+            display: none;
+        }
+
+        .section2 {
+            margin: 90px 0;
+            margin-left: 140px;
+            max-width: 220px;
+            padding: 15px;
+            background-color: #2c2c4c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba;
+            position: relative;
+            display: none;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #dcdcdc;;
+        }
+
+        .section1 h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color:#dcdcdc;;
+        }
+
+        .section2 h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #dcdcdc;;
+        }
+            nav {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            height: 55%;
+            width: 120px;
+            background-color: rgba(40, 44, 52, 0.9); /* Purplish-blue background */
+            overflow: hidden;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000; /* Element at top of another element */
+            display: flex; /* Allowing for flexible layout and alignment of child elements */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           }
+           nav a {
+            display: flex;
+            align-items: center;
+            font-size: 7px;
+            color: #ffffff; /* White text color */
+            text-align: center;
+            padding: 20px; /* Space between each text */
+            text-decoration: none;
+            border-bottom: 1px solid #242323; /* Light gray border */
+            width: 100%;
+            box-sizing: border-box;
+           }
+           .motto {
+            position: absolute;
+            right: 40px; /* Adjust as needed */
+            top: 455px;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            color: #ffffff; /* White text color */
+}
+       
+           .motto-urdu, .motto-arabic {
+    
+            font-size: 20px;
+        }
+        .profile-section {
+            margin-left: 220px;
+            position: fixed;
+            top: 0px;
+            right: 5px;
+            height: 55vh;
+            width: 150px;
+            background-color: rgba; /* Purplish-blue background */
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba;
+            text-align: center;
+            border: 2px solid #0f0f0f; /* Dark border color */
+            overflow-y: auto;
+        }
+
+        .profile-pic {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .profile-name {
+            font-family: 'Lato', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff; /* White text color */
+            margin: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #3b3b6d; /* Purplish-blue background for list items */
+            border-left: 5px solid #15152b; /* Darker purplish-blue border */
+            border-right: 5px solid #15152b;
+            border-radius: 5px;
+            color: #e0e0e0; /* Light gray text color */
+        }
+        .education-list li {
+            border-bottom: 1px solid #444; /* Dark border color */
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 10px;
+            color: #e0e0e0; /* Light gray text color */
+        }
         }
     </style>
 </head>
@@ -272,12 +459,16 @@
          <!-- classes fas and fa-home are from Font Awesome
          and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
        
-        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a>
+         <a id="home-button"><i class="fas fa-home nav-icon"></i> Home</a>
         <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
         <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
         <a id="toggle-section"><i class="fas fa-award nav-icon"></i> Certificates&Awards</a>
         <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i> Projects&Courses</a>
     </nav>
+      <mobnav>
+        <a id="toggle-section"><i class="fas fa-award nav-icon"></i> Certificates& Awards</a>
+        <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i> Projects& Courses</a>
+      </mobnav>
 
     <!-- Motto --><!--div element name motto-->
     <div class="motto">
@@ -301,7 +492,7 @@
         <div class="education-list">
             <h3>Education</h3>
             <ul>
-                <li>
+                <li><!--br, break and starts from next line-->
                     <strong>Bachelor's:</strong> BS Computer Science, Information Technology University
                     <br><span class="date">Aug 2022 - Aug 2026</span>
                 </li>
@@ -361,23 +552,31 @@
          /*Displays the element with the ID skills.Hides the elements with IDs contact and 
     certificates-achievements-courses by setting their display properties to none.
     Click toggle-skills: Shows the "skills" section and hides "contact" and "certificates-achievements-courses"*/
-        document.getElementById('toggle-skills').addEventListener('click', function() {
-            document.getElementById('skills').style.display = 'block';
-            document.getElementById('contact').style.display = 'none';
-            document.getElementById('certificates-achievements-courses').style.display = 'none';
-        });
+    function hideAllSections() {
+        document.getElementById('skills').style.display = 'none';
+        document.getElementById('contact').style.display = 'none';
+        document.getElementById('certificates-achievements-courses').style.display = 'none';
+    }
+    
+    document.getElementById('toggle-skills').addEventListener('click', function() {
+        hideAllSections(); // Hide all sections first
+        document.getElementById('skills').style.display = 'block'; // Show only the skills section
+    });
 
-        document.getElementById('toggle-contact').addEventListener('click', function() {
-            document.getElementById('skills').style.display = 'none';
-            document.getElementById('contact').style.display = 'block';
-            document.getElementById('certificates-achievements-courses').style.display = 'none';
-        });
+    document.getElementById('toggle-contact').addEventListener('click', function() {
+        hideAllSections(); // Hide all sections first
+        document.getElementById('contact').style.display = 'block'; // Show only the contact section
+    });
 
-        document.getElementById('toggle-section').addEventListener('click', function() {
-            document.getElementById('skills').style.display = 'none';
-            document.getElementById('contact').style.display = 'none';
-            document.getElementById('certificates-achievements-courses').style.display = 'block';
-        });
+    document.getElementById('toggle-section').addEventListener('click', function() {
+        hideAllSections(); // Hide all sections first
+        document.getElementById('certificates-achievements-courses').style.display = 'block'; // Show only the certificates section
+    });
+         // Event listener for the "Home" button to hide all sections and reset the view
+    document.getElementById('home-button').addEventListener('click', function() {
+        hideAllSections(); // Hide all sections when "Home" is clicked
+    });
+        
     </script>
 </body>
 </html>
