@@ -8,6 +8,8 @@
      Python, Web Development, BS Computer Science, ITU, Information Technology University">
     <meta name="author" content="Maheen Fatima">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
     <title>My Projects and Courses</title>
@@ -96,6 +98,27 @@
 
         .course-item:hover {
             background-color: #6a6a9c; /* Slightly lighter purplish-blue on hover */
+        }
+        @media screen and (max-width: 450px) 
+        {
+            .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid layout */
+            gap: 10px;
+            font-size: 13px;
+        }
+        li {
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 14px;
+            background-color: #4a4a8c; /* Medium purplish-blue color */
+            border-left: 5px solid #2e2e5e; /* Darker purplish-blue border */
+            border-right: 5px solid #2e2e5e;
+            border-radius: 5px;
+            color: #e0e0e0; /* Light text color */
+        }
+ 
+
         }
     </style>
 </head>
