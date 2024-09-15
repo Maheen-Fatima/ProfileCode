@@ -4,15 +4,45 @@
     <meta charset="UTF-8">
     <title>My Profile</title>
     <!-- Link to Font for icons -->
+     <!--line rel rel="stylesheet" attribute specifies that the linked file is a CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            background-image: url('images/background.jpg');/*img path*/
-            background-size: cover;/*so that it covers the entire page*/
-            font-family: Georgia, serif;
+            background-image: url('images/bg.jpeg');
+            background-size: cover;
             margin: 0;
             padding: 0;
-            color: #3b3b3b;
+            color: #ffffff;
+            font-family: Georgia, serif;
+            overflow: hidden; /* Prevents scroll bars from appearing */
+        }
+    
+        /* Background Video Frame Styling */
+        .video-frame {
+            position: fixed;
+            margin-left: 170px;
+            margin: 120px; /* Adjusted margin */
+            top: 0;
+            left: 108px; /* Move video slightly to the right */
+            right: 100px;
+            width: 59%; /* Set the width of the video frame */
+            height: 75%; /* Set the height of the video frame */
+            padding: 15px; /* Padding inside the frame */
+            border: 5px solid #161616; /* Dark border color of the frame */
+            border-radius: 10px; /* Rounded corners for the frame */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow to give a 3D effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1; /* Sends the video behind all other content */
+        }
+
+        /* Background Video Styling */
+        .bg-video {
+            width: 100%; /* Fill the width of the frame */
+            height: 100%; /* Fill the height of the frame */
+            object-fit: cover; /* Ensures the video covers the whole area of the frame */
+            border-radius: 5px; /* Rounded corners for the video */
         }
 
         /* Navigation Bar styling */
@@ -21,12 +51,12 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 230px;
-            background-color: rgba(51, 51, 51, 0.8);
+            width: 225px;
+            background-color: rgba(40, 44, 52, 0.9); /* Purplish-blue background */
             overflow: auto;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-            z-index: 1000;/*element at top of another ele*/
-            display: flex;/*allowing for flexible layout and alignment of child elements.*/
+            z-index: 1000; /* Element at top of another element */
+            display: flex; /* Allowing for flexible layout and alignment of child elements */
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -36,11 +66,11 @@
             display: flex;
             align-items: center;
             font-size: 18px;
-            color: white;
+            color: #ffffff; /* White text color */
             text-align: center;
-            padding: 20px;/*space btw each text*/
+            padding: 20px; /* Space between each text */
             text-decoration: none;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #242323; /* Light gray border */
             width: 100%;
             box-sizing: border-box;
         }
@@ -51,8 +81,8 @@
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #4b3f72; /* Slightly lighter purplish-blue for hover */
+            color: #ffffff; /* White text on hover */
         }
 
         .motto {
@@ -61,7 +91,7 @@
             margin: 20px 0;
             font-size: 20px;
             font-family: 'Lato', sans-serif;
-            color: #333;
+            color: #ffffff; /* White text color */
         }
 
         .motto-urdu, .motto-arabic {
@@ -75,12 +105,12 @@
             right: 5px;
             height: 90vh;
             width: 250px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba; /* Purplish-blue background */
             padding: 15px;
             border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba;
             text-align: center;
-            border: 2px solid black;
+            border: 2px solid #0f0f0f; /* Dark border color */
             overflow-y: auto;
         }
 
@@ -96,7 +126,7 @@
             font-family: 'Lato', sans-serif;
             font-size: 24px;
             font-weight: 700;
-            color: #000000;
+            color: #ffffff; /* White text color */
             margin: 0;
         }
 
@@ -115,46 +145,49 @@
         }
 
         .education-list li {
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #444; /* Dark border color */
             padding-bottom: 10px;
             margin-bottom: 10px;
+            color: #e0e0e0; /* Light gray text color */
         }
 
         .date {
             display: block;
             font-size: 0.9em;
-            color: #555;
+            color: #aaa; /* Light gray for dates */
         }
 
         /* Section Styling */
-        .section{
-            margin: 60px 0;
+        .section {
+            margin: 75px 0;
             margin-left: 280px;
             max-width: 700px;
             padding: 15px;
-            background-color: #ffffff;
+            background-color: #2c2c4c;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba;
             position: relative;
             display: none;
         }
-        .section1{
-            margin: 50px 0;
-            margin-left: 330px;
-            max-width: 600px;
+
+        .section1 {
+            margin: 40px 0;
+            margin-left: 355px;
+            max-width: 550px;
             padding: 10px;
-            background-color: #ffffff;
+            background-color:#2c2c4c;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba;
             position: relative;
             display: none;
         }
-        .section2{
-            margin: 130px 0;
+
+        .section2 {
+            margin: 90px 0;
             margin-left: 350px;
             max-width: 600px;
             padding: 15px;
-            background-color: #ffffff;
+            background-color: #2c2c4c;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba;
             position: relative;
@@ -166,22 +199,26 @@
             font-family: 'Lato', sans-serif;
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #6a4c41;
+            color: #dcdcdc;;
         }
+
         .section1 h2 {
             text-align: center;
             font-family: 'Lato', sans-serif;
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #6a4c41;
+            color:#dcdcdc;;
         }
+
         .section2 h2 {
             text-align: center;
             font-family: 'Lato', sans-serif;
             font-size: 1.8em;
             margin-bottom: 20px;
-            color: #6a4c41;
+            color: #dcdcdc;;
         }
+        
+
 
         ul {
             list-style-type: none;
@@ -191,14 +228,15 @@
         li {
             margin: 15px 0;
             padding: 10px;
-            background-color: #e8dcd8;
-            border-left: 5px solid #a88f77;
-            border-right: 5px solid #a88f77;
+            background-color: #3b3b6d; /* Purplish-blue background for list items */
+            border-left: 5px solid #15152b; /* Darker purplish-blue border */
+            border-right: 5px solid #15152b;
             border-radius: 5px;
+            color: #e0e0e0; /* Light gray text color */
         }
 
         li:hover {
-            background-color: #d4bfb8;
+            background-color: #4b3f72; /* Slightly lighter purplish-blue for hover */
         }
 
         .contact-info p {
@@ -206,31 +244,38 @@
         }
 
         .contact-info a {
-            color: #4a3b2c;
+            color: #e0e0e0; /* Light gray text color */
             text-decoration: none;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
         }
-
-        
     </style>
 </head>
 <body>
+    <!-- Video Frame with Background Video -->
+    <div class="video-frame">
+        <video autoplay muted loop class="bg-video">
+            <source src="/images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
     <!-- Navigation Bar -->
     <nav> <!--a creates a clickable link. <i> tag used for icons-->
-        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a> <!-- classes fas and fa-home are from Font Awesome
+         <!-- classes fas and fa-home are from Font Awesome
          and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
+       
+        <a href="home.html"><i class="fas fa-home nav-icon"></i> Home</a>
         <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
         <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
-        <a id="toggle-section"><i class="fas fa-award nav-icon"></i>Certificates&Awards</a>
-        <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i>Projects&Courses</a>
+        <a id="toggle-section"><i class="fas fa-award nav-icon"></i> Certificates&Awards</a>
+        <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i> Projects&Courses</a>
     </nav>
 
-    <!-- Motto -->
-    <div class="motto"><!--div element name motto-->
+    <!-- Motto --><!--div element name motto-->
+    <div class="motto">
         <div class="motto-urdu" dir="rtl"><!--rtl is for right to left direction for texts-->
             انسان کے لئے وہی کچھ ہے جس کے لئے وہ کوشش کرے
         </div>
@@ -240,9 +285,9 @@
     </div>
 
     <!-- Profile Section -->
+       <!--alt..If the image can't be displayed, this text will be shown instead-->
     <div class="profile-section">
-        <!--alt..If the image can't be displayed, this text will be shown instead-->
-        <img src="images/profilepic.png" alt="Profile Picture"class="profile-pic">
+        <img src="/images/profile.jpg" alt="Profile Picture" class="profile-pic">
         <p class="profile-name">Maheen Fatima</p>
         <div class="contact-info">
             <p><span class="icon">📞</span>03234666447</p>
@@ -266,19 +311,17 @@
         </div>
     </div>
 
-
     <!-- Certificates, Achievements, and Courses Section -->
-<div id="certificates-achievements-courses" class="section">
-    <h2>Certificates & Achievements</h2>
-    <ul>
-        <li>Participation in IKLC</li>
-        <li>MUN participation at school level</li>
-        <li>Kinnaird festival of Statistics and Data Science</li>
-        <li>Kinnaird Festival of Statistics and Data Science Poster Competition - 1st position</li>
-        <li>Scored 2nd Position in IKLC at school level</li>
-    </ul>
-</div>
-
+    <div id="certificates-achievements-courses" class="section">
+        <h2>Certificates & Achievements</h2>
+        <ul>
+            <li>Participation in IKLC</li>
+            <li>MUN participation at school level</li>
+            <li>Kinnaird festival of Statistics and Data Science</li>
+            <li>Kinnaird Festival of Statistics and Data Science Poster Competition - 1st position</li>
+            <li>Scored 2nd Position in IKLC at school level</li>
+        </ul>
+    </div>
 
     <!-- Skills Section -->
     <div id="skills" class="section1">
@@ -298,16 +341,19 @@
     <div id="contact" class="section2">
         <h2>Contact Me</h2>
         <div class="contact-info">
-            <p><strong>Phone:</strong> 03234666447</p>
-            <p><strong>Email 1:</strong> <a href="mailto:bscs22093@itu.edu.pk">bscs22093@itu.edu.pk</a></p>
-            <p><strong>Email 2:</strong> <a href="mailto:maheenawais.15@gmail.com">maheenawais.15@gmail.com</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/Maheen-Fatima" target="_blank">https://github.com/Maheen-Fatima</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/maheen-fatima-485739263/" target="_blank">https://www.linkedin.com/in/maheen-fatima-485739263/</a></p>
-        </div><!--target.. link should open in a new tab or window-->
+            <ul class="contact-list">
+                <li><strong>Phone:</strong> 03234666447</li>
+                <li><strong>Email 1:</strong> <a href="mailto:bscs22093@itu.edu.pk">bscs22093@itu.edu.pk</a></li>
+                <li><strong>Email 2:</strong> <a href="mailto:maheenawais.15@gmail.com">maheenawais.15@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/Maheen-Fatima" target="_blank">https://github.com/Maheen-Fatima</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/maheen-fatima-485739263/" target="_blank">https://www.linkedin.com/in/maheen-fatima-485739263/</a></li>
+            </ul><!--target.. link should open in a new tab or window-->
+            </div>
     </div>
 
     <!-- JavaScript to toggle sections -->
-    <script> /*Displays the element with the ID skills.Hides the elements with IDs contact and 
+    <script>
+         /*Displays the element with the ID skills.Hides the elements with IDs contact and 
     certificates-achievements-courses by setting their display properties to none.
     Click toggle-skills: Shows the "skills" section and hides "contact" and "certificates-achievements-courses"*/
         document.getElementById('toggle-skills').addEventListener('click', function() {
