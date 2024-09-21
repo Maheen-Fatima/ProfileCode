@@ -453,22 +453,20 @@
 <body>
     <!-- Video Frame with Background Video -->
     <div class="video-frame">
-        <video autoplay muted loop class="bg-video">
-            <source src="/images/videoo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <!-- The video element will be populated by JavaScript -->
+          <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
     </div>
+
 
     <!-- Navigation Bar -->
     <nav> <!--a creates a clickable link. <i> tag used for icons-->
          <!-- classes fas and fa-home are from Font Awesome
          and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
-       
-         <a id="home-button"><i class="fas fa-home nav-icon"></i> Home</a>
-        <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
-        <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
-        <a id="toggle-section"><i class="fas fa-award nav-icon"></i> Certificates&Awards</a>
-        <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i> Projects&Courses</a>
+        
+         <!-- Link to external JavaScript file -->
+         <script src="script.js"></script>
+        
     </nav>
      
 
@@ -578,7 +576,11 @@
     document.getElementById('home-button').addEventListener('click', function() {
         hideAllSections(); // Hide all sections when "Home" is clicked
     });
-        
+
+
+
+
+   
     </script>
 </body>
 </html>
