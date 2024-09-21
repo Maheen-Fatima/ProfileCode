@@ -6,7 +6,7 @@ const navItems = [
       id: 'home-button',
       icon: 'fas fa-home nav-icon',
       label: 'Home',
-      href: '#',  // '#' used as placeholder to make a clickable link
+      href: '#',  // '#' it is used as placeholder to make a clickable link
     },
     {
       id: 'toggle-skills',  // toggle to get a drop down
