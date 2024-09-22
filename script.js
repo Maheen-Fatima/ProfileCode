@@ -292,7 +292,7 @@
 });
 
 
-  // Call the function on page load
+  // Call the function on pagee load
   populateVideo();
   populateMotto();
   populateProfile();
