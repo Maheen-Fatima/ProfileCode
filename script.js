@@ -1,4 +1,41 @@
 
+
+
+
+
+// JavaScript Object holding contact information data
+       const contactData = {
+    title: "Contact Me",
+    info: [
+        {
+            label: "Phone",
+            value: "03234666447"
+        },
+        {
+            label: "Email 1",
+            value: "bscs22093@itu.edu.pk",
+            mailto: true
+        },
+        {
+            label: "Email 2",
+            value: "maheenawais.15@gmail.com",
+            mailto: true
+        },
+        {
+            label: "GitHub",
+            value: "https://github.com/Maheen-Fatima",
+            target: "_blank"
+        },
+        {
+            label: "LinkedIn",
+            value: "https://www.linkedin.com/in/maheen-fatima-485739263/",
+            target: "_blank"
+        }
+    ]
+};
+
+
+
 // JavaScript Object holding skills data
         const skillsData = {
     title: "My Skills",
@@ -75,6 +112,9 @@
   muted: true,                     // Muted setting
   loop: true                       // Loop setting
    };
+
+
+
 
 // Function to populate the video element based on videoData
        function populateVideo() {
@@ -213,8 +253,43 @@
 }
 
 
+// Function to populate the contact information in HTML dynamically
+         function populateContact() {
+    const contactSection = document.getElementById('contact');
+    const title = contactSection.querySelector('h2');
+    const list = contactSection.querySelector('.contact-list');
 
+    // Set the title
+    title.textContent = contactData.title;
 
+    // Populate the list with items
+    contactData.info.forEach(item => {
+        const listItem = document.createElement('li');
+        if (item.mailto) {
+            listItem.innerHTML = `<strong>${item.label}:</strong> <a href="mailto:${item.value}">${item.value}</a>`;
+        } else if (item.target) {
+            listItem.innerHTML = `<strong>${item.label}:</strong> <a href="${item.value}" target="${item.target}">${item.value}</a>`;
+        } else {
+            listItem.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
+        }
+        list.appendChild(listItem);
+    });
+}
+
+ // This event listener waits until the entire HTML document is fully loaded and parsed
+         document.addEventListener('DOMContentLoaded', function() {
+    
+    // Select all <li> elements inside the <ul> or <ol> element with the id 'projectList'
+    let projects = document.querySelectorAll('#projectList li');
+
+    // Loop through each project (each <li> item)
+    projects.forEach(project => {
+
+        // Log a message to the console displaying the text of each project
+        // 'textContent' gets the text inside the <li> element, and 'trim()' removes any extra spaces
+        console.log('Project loaded:', project.textContent.trim());
+    });
+});
 
 
   // Call the function on page load
@@ -223,5 +298,6 @@
   populateProfile();
   populateCertificatesAchievements();
   populateSkills();
+  populateContact();
    
           
