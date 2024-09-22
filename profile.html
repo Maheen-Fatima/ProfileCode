@@ -453,84 +453,49 @@
 
 <body>
     <!-- Video Frame with Background Video -->
-    <div class="video-frame">
-        <!-- The video element will be populated by JavaScript -->
-          <!-- Link to the external JavaScript file -->
-    <script src="script.js"></script>
-    </div>
+    <div class="video-frame"></div>
 
 
     <!-- Navigation Bar -->
     <nav> <!--a creates a clickable link. <i> tag used for icons-->
-         <!-- classes fas and fa-home are from Font Awesome
-         and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
-        
-         <!-- Link to external JavaScript file -->
-         <script src="script.js"></script>
-        
-    </nav>
+        <!-- classes fas and fa-home are from Font Awesome
+        and it displays the home button. nav-icon class can be used for additional styling specific to navigation icons-->
+      
+        <a id="home-button"><i class="fas fa-home nav-icon"></i> Home</a>
+       <a id="toggle-skills"><i class="fas fa-cogs nav-icon"></i> Skills</a>
+       <a id="toggle-contact"><i class="fas fa-address-book nav-icon"></i> Contacts</a>
+       <a id="toggle-section"><i class="fas fa-award nav-icon"></i> Certificates&Awards</a>
+       <a href="projects and courses.html"><i class="fas fa-project-diagram nav-icon"></i> Projects&Courses</a>
+   </nav>
      
 
     <!-- Motto --><!--div element name motto-->
-    <div class="motto">
-        <div class="motto-urdu" dir="rtl"><!--rtl is for right to left direction for texts-->
-            انسان کے لئے وہی کچھ ہے جس کے لئے وہ کوشش کرے
-        </div>
-        <div class="motto-arabic" dir="rtl">
-            الإنسان فقط يحصل على ما يسعى إليه
+    <div class="motto"></div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+        <img src="/images/pic1.jpeg" alt="Profile Picture" class="profile-pic">
+        <p class="profile-name"></p>
+        <div class="contact-info"></div>
+        <div class="education-list">
+            <h3>Education</h3>
+            <ul></ul> <!-- This starts empty but will be filled by JavaScript -->
         </div>
     </div>
 
-    <!-- Profile Section -->
-       <!--alt..If the image can't be displayed, this text will be shown instead-->
-    <div class="profile-section">
-        <img src="/images/pic1.jpeg" alt="Profile Picture" class="profile-pic">
-        <p class="profile-name">Maheen Fatima</p>
-        <div class="contact-info">
-            <p><span class="icon">📞</span>03234666447</p>
-            <p><span class="icon">📧</span>bscs22093@itu.edu.pk</p>
-        </div>
-        <div class="education-list">
-            <h3>Education</h3>
-            <ul>
-                <li><!--br, break and starts from next line-->
-                    <strong>Bachelor's:</strong> BS Computer Science, Information Technology University
-                    <br><span class="date">Aug 2022 - Aug 2026</span>
-                </li>
-                <li>
-                    <strong>Intermediate:</strong> Intermediate in Computer Science, Kinnaird College for Women
-                    <br><span class="date">Sept 2020 - Sept 2022</span>
-                </li>
-                <li>
-                    <strong>School:</strong> Lahore Grammar School
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <!-- Certificates, Achievements, and Courses Section -->
     <div id="certificates-achievements-courses" class="section">
-        <h2>Certificates & Achievements</h2>
-        <ul>
-            <li>Participation in IKLC</li>
-            <li>MUN participation at school level</li>
-            <li>Kinnaird festival of Statistics and Data Science</li>
-            <li>Kinnaird Festival of Statistics and Data Science Poster Competition - 1st position</li>
-            <li>Scored 2nd Position in IKLC at school level</li>
-        </ul>
+        <h2></h2> 
+        <ul></ul> 
     </div>
 
+    
     <!-- Skills Section -->
     <div id="skills" class="section1">
-        <h2>My Skills</h2>
+        <h2></h2>
         <ul>
-            <li>C++</li>
-            <li>C#</li>
-            <li>Java</li>
-            <li>Web Development</li>
-            <li>Communication skills</li>
-            <li>Microsoft Office</li>
-            <li>Team work</li>
+            <!-- Skills will be populated here -->
         </ul>
     </div>
 
@@ -548,40 +513,9 @@
             </div>
     </div>
 
-    <!-- JavaScript to toggle sections -->
-    <script>
-         /*Displays the element with the ID skills.Hides the elements with IDs contact and 
-    certificates-achievements-courses by setting their display properties to none.
-    Click toggle-skills: Shows the "skills" section and hides "contact" and "certificates-achievements-courses"*/
-    function hideAllSections() {
-        document.getElementById('skills').style.display = 'none';
-        document.getElementById('contact').style.display = 'none';
-        document.getElementById('certificates-achievements-courses').style.display = 'none';
-    }
     
-    document.getElementById('toggle-skills').addEventListener('click', function() {
-        hideAllSections(); // Hide all sections first
-        document.getElementById('skills').style.display = 'block'; // Show only the skills section
-    });
-
-    document.getElementById('toggle-contact').addEventListener('click', function() {
-        hideAllSections(); // Hide all sections first
-        document.getElementById('contact').style.display = 'block'; // Show only the contact section
-    });
-
-    document.getElementById('toggle-section').addEventListener('click', function() {
-        hideAllSections(); // Hide all sections first
-        document.getElementById('certificates-achievements-courses').style.display = 'block'; // Show only the certificates section
-    });
-         // Event listener for the "Home" button to hide all sections and reset the view
-    document.getElementById('home-button').addEventListener('click', function() {
-        hideAllSections(); // Hide all sections when "Home" is clicked
-    });
-
-
-
-
-   
+    
+    <script  src="script.js">
     </script>
 </body>
 </html>
