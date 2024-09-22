@@ -130,86 +130,84 @@
         <div class="section">
             <h2>Projects</h2>
             <ul id="projectList">
-                <li>
-                    <span class="date">Jan 2023:</span> Snake Game
-                </li>
-                <li>
-                    <span class="date">Dec 2022:</span> Japanese Chess
-                </li>
-                <li>
-                    <span class="date">Nov 2022:</span> Gomoku
-                </li>
-                <li>
-                    <span class="date">March 2023:</span> Scientific Calculator
-                </li>
-                <li>
-                    <span class="date">March 2023:</span> Chess Game
-                </li>
-                <li>
-                    <span class="date">April 2023:</span> Ludo
-                </li>
-                <li>
-                    <span class="date">May 2023:</span> Paint Brush
-                </li>
-                <li>
-                    <span class="date">Sept 2023:</span> Solitaire
-                </li>
-                <li>
-                    <span class="date">Oct 2023:</span> Mini Excel
-                </li>
-                <li>
-                    <span class="date">Nov 2023:</span> DOS and Text Editor
-                </li>
-                <li>
-                    <span class="date">Dec 2023:</span> Search Engine
-                </li>
-                <li>
-                    <span class="date">Jan 2024:</span> Darkness Detector with Arduino
-                </li>
-                <li>
-                    <span class="date">May 2024:</span> Hotel Management System
-                </li>
+                <!-- Projects will be populated here -->
             </ul>
         </div>
-
+    
         <div class="section">
             <h2>Courses</h2>
             <div class="courses-container">
-                <div class="course-item">Computing Fundamental and Programming (CFP)</div>
-                <div class="course-item">Information Communication Technology (ICT)</div>
-                <div class="course-item">Object Oriented Programming (OOP)</div>
-                <div class="course-item">Data Structures & Algorithms (DSA)</div>
-                <div class="course-item">Design & Analysis of Algorithms</div>
-                <div class="course-item">Financial Law</div>
-                <div class="course-item">Computer Architecture and Assembly language</div>
-                <div class="course-item">Discrete Structure</div>
-                <div class="course-item">Game Theory</div>
-                <div class="course-item">Digital Logic Design (DLD)</div>
-                <div class="course-item">Database System</div>
-                <div class="course-item">Basic Electronics</div>
-                <div class="course-item">Communication Skills</div>
-                <div class="course-item">Quran Translation</div>
-                <div class="course-item">Java language</div>
+                <!-- Courses will be populated here -->
             </div>
         </div>
     </div>
 
     <script>
-        // This event listener waits until the entire HTML document is fully loaded and parsed
-        document.addEventListener('DOMContentLoaded', function() {
-    
-            // Select all <li> elements inside the <ul> or <ol> element with the id 'projectList'
-            let projects = document.querySelectorAll('#projectList li');
-    
-            // Loop through each project (each <li> item)
-            projects.forEach(project => {
-    
-                // Log a message to the console displaying the text of each project
-                // 'textContent' gets the text inside the <li> element, and 'trim()' removes any extra spaces
-                console.log('Project loaded:', project.textContent.trim());
-            });
-        });
+
+// JavaScript Object holding projects and courses data
+       const projectsCoursesData = {
+    projects: [
+        { date: "Jan 2023", name: "Snake Game" },
+        { date: "Dec 2022", name: "Japanese Chess" },
+        { date: "Nov 2022", name: "Gomoku" },
+        { date: "March 2023", name: "Scientific Calculator" },
+        { date: "March 2023", name: "Chess Game" },
+        { date: "April 2023", name: "Ludo" },
+        { date: "May 2023", name: "Paint Brush" },
+        { date: "Sept 2023", name: "Solitaire" },
+        { date: "Oct 2023", name: "Mini Excel" },
+        { date: "Nov 2023", name: "DOS and Text Editor" },
+        { date: "Dec 2023", name: "Search Engine" },
+        { date: "Jan 2024", name: "Darkness Detector with Arduino" },
+        { date: "May 2024", name: "Hotel Management System" }
+    ],
+    courses: [
+        "Computing Fundamental and Programming (CFP)",
+        "Information Communication Technology (ICT)",
+        "Object Oriented Programming (OOP)",
+        "Data Structures & Algorithms (DSA)",
+        "Design & Analysis of Algorithms",
+        "Financial Law",
+        "Computer Architecture and Assembly language",
+        "Discrete Structure",
+        "Game Theory",
+        "Digital Logic Design (DLD)",
+        "Database System",
+        "Basic Electronics",
+        "Communication Skills",
+        "Quran Translation",
+        "Java language"
+    ]
+};
+
+// Function to populate projects in HTML
+       function populateProjects() {
+    const projectList = document.getElementById('projectList');
+    projectsCoursesData.projects.forEach(project => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<span class="date">${project.date}:</span> ${project.name}`;
+        projectList.appendChild(listItem);
+    });
+}
+
+// Function to populate courses in HTML 
+       function populateCourses() {
+    const coursesContainer = document.querySelector('.courses-container');
+    projectsCoursesData.courses.forEach(course => {
+        const courseItem = document.createElement('div');
+        courseItem.className = 'course-item';
+        courseItem.textContent = course;
+        coursesContainer.appendChild(courseItem);
+    });
+}
+
+// Call the functions on page load
+     populateProjects();
+     populateCourses();
+
+
     </script>
+   
     
 
 </body>
